@@ -1,4 +1,4 @@
-import { ethers, run, network } from "hardhat";
+import { ethers, run } from "hardhat";
 
 const verify = async (contractAddress: string, args: any[]) => {
   console.log("Verifying contract...");
@@ -22,8 +22,6 @@ async function main() {
   await qream.deployed();
   await verify(qream.address, []);
   console.log(`deployed to ${qream.address}`);
-  // Interacting with erc-20
-  await qream.mint("0xF0ccc8B440Bf013a37ef722530B1e4727a785CfA", 60);
 }
 
 main().catch((error) => {
